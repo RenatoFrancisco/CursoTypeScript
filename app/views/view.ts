@@ -3,8 +3,12 @@ export abstract class View<T> {
     protected elemento: HTMLInputElement;
     private escapar = false;
 
-    constructor(seletor: string, escapar: boolean) {
+    constructor(seletor: string, escapar?: boolean) {
         this.elemento = document.querySelector(seletor);
+        if (this.escapar) {
+            this.escapar = escapar;
+        }
+
         this.escapar = escapar;
     }
 
