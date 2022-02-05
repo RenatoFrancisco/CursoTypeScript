@@ -4,12 +4,12 @@ export abstract class View<T> {
     private escapar = false;
 
     constructor(seletor: string, escapar?: boolean) {
-        this.elemento = document.querySelector(seletor);
+        this.elemento = document.querySelector(seletor) as HTMLInputElement;
         if (this.escapar) {
-            this.escapar = escapar;
+            this.escapar = escapar as boolean;
         }
 
-        this.escapar = escapar;
+        this.escapar = escapar as boolean;
     }
 
     protected abstract template(model: T): string;
